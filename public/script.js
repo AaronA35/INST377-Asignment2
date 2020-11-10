@@ -10,8 +10,8 @@ function findEstablishments(wordToMatch, restaurants) {
    });
 }
  
-function displayEstablishments() {
-   const matchArray = findEstablishments(this.value, restaurants);
+function displayestablishments() {
+   const matchArray = findestablishments(this.value, restaurants);
    const html = matchArray.map(establishments => {
        return `
         <li>
