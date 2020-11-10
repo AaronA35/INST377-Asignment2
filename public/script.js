@@ -3,7 +3,7 @@ const restaurants = [];
  
 fetch(endpoint).then(blob => blob.json()).then(data => restaurants.push(...data));
  
-function findEstablishments(wordToMatch, restaurants) {
+function findestablishments(wordToMatch, restaurants) {
    return restaurants.filter(establishments => {
        const regex = new RegExp(wordToMatch, 'gi');
        return establishments.name.match(regex) || establishments.category.match(regex)
