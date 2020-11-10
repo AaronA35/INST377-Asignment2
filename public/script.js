@@ -1,17 +1,17 @@
 const endpoint = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json';
-const restaurants = [];
+const restaurant = [];
  
-fetch(endpoint).then(blob => blob.json()).then(data => restaurants.push(...data));
+fetch(endpoint).then(blob => blob.json()).then(data => restaurant.push(...data));
  
-function findestablishments(wordToMatch, restaurants) {
-   return restaurants.filter(establishments => {
+function findMatches(wordToMatch, restaurant) {
+   return restaurant.filter(establishments => {
        const regex = new RegExp(wordToMatch, 'gi');
        return establishments.name.match(regex) || establishments.category.match(regex)
    });
 }
  
-function displayestablishments() {
-   const matchArray = findestablishments(this.value, restaurants);
+function displayMatches() {
+   const matchArray = findMatches(this.value, restaurant);
    const html = matchArray.map(establishments => {
        return `
         <li>
